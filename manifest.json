@@ -13,5 +13,15 @@
    "name": "Revolver - Tabs",
    "options_page": "options.html",
    "permissions": [ "tabs", "idle", "storage" ],
-   "version": "0.7"
+   "version": "0.7",
+   "commands": {
+       "stop-rotation": {
+         "suggested_key": { "default": "Alt+S" },
+         "description": "Stop Tab Rotation"
+       },
+       "start-rotation": {
+         "suggested_key": { "default": "Alt+R" },
+         "description": "Start Tab Rotation"
+       }
+    }
 }

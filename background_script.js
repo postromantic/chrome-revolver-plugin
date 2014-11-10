@@ -71,3 +71,16 @@ chrome.windows.onRemoved.addListener(function (id) {
   instances[id.toString()].destroy();
   delete instances[id.toString()];
 });
+
+chrome.commands.onCommand.addListener(function(command) {
+  chrome.windows.getCurrent(function (win) {
+    var instance = getInstance(win.id);
+    if (instance.isGoing && command=="stop-rotation") {
+      instance.stop();
+    }
+    else if(command=="start-rotation"){
+      instance.start();
+    }
+    updateBadgeForInstance(instance);
+  });
+});
